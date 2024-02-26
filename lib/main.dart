@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: ThemeHelper.light,
       darkTheme: ThemeHelper.dark,
-      locale: const Locale("fa"),
       home: const HomeView(),
     );
   }
