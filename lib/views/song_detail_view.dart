@@ -86,7 +86,7 @@ class SongDetailView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () => controller.fastForwardOrBack10Seconds(forward: false),
                             icon: const Icon(Icons.fast_rewind_rounded,
                                 size: 48)),
                         IconButton(
@@ -97,7 +97,7 @@ class SongDetailView extends StatelessWidget {
                                     : Icons.play_arrow,
                                 size: 48)),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () => controller.fastForwardOrBack10Seconds(),
                             icon: const Icon(Icons.fast_forward, size: 48))
                       ],
                     ),

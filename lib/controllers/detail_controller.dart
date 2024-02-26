@@ -46,8 +46,25 @@ class AudioDetailController extends GetxController {
   }
 
   double getSliderValue(){
-    return  currentDuration.inSeconds / (duration?.inSeconds ?? 1);
+    if(duration != null && duration!.inSeconds > 0) {
+      return currentDuration.inSeconds / (duration?.inSeconds ?? 1);
+    } else {
+      return 0.0;
+    }
+
   }
+
+  void fastForwardOrBack10Seconds ({bool forward = true}) {
+   final currentPosition = audioPlayer.position;
+   final Duration newPosition;
+   if(forward){
+     newPosition = currentPosition + const Duration(seconds: 10);
+   } else {
+     newPosition = currentPosition - const Duration(seconds: 10);
+   }
+   audioPlayer.seek(newPosition);
+  }
+
 
 //============================= Life Cycles ====================================
   @override
