@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   on_audio_query: ^2.9.0
   just_audio: ^0.9.36
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
