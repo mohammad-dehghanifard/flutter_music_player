@@ -101,6 +101,11 @@ class SongDetailView extends StatelessWidget {
                             icon: const Icon(Icons.fast_forward, size: 48))
                       ],
                     ),
+                    SizedBox(height: size.height * 0.06),
+
+                    const Text("GitHub : mohammad-dehghanifard"),
+                    const Text("WebSite : https://dehghanifard.ir"),
+                    const Text("Instagram : m.deghanifard"),
                   ],
                 );
               })),
