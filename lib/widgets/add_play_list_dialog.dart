@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_music_player/controllers/play_list_controller.dart';
+import 'package:get/get.dart';
 
 class AddPlayListDialog extends StatelessWidget {
   const AddPlayListDialog({super.key});
@@ -11,15 +13,30 @@ class AddPlayListDialog extends StatelessWidget {
       ),
       child: SizedBox(
         width: double.infinity,
-        height: 200,
+        height:  MediaQuery.sizeOf(context).height * 0.20,
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: Column(
-            children: [
-              TextFormField(
-
-              )
-            ],
+          child: GetBuilder<PlayListController>(
+            builder: (controller) {
+              return Directionality(
+                textDirection: TextDirection.rtl,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText:  "نام لیست پخش جدید",
+                      ),
+                      controller: controller.playListName,
+                    ),
+                    SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
+                    ElevatedButton(
+                        onPressed: () => controller.createPlayList(),
+                        child:  Text("ایجاد لیست پخش",style: context.textTheme.bodyMedium,)
+                    )
+                  ],
+                ),
+              );
+            }
           ),
         ),
       ),

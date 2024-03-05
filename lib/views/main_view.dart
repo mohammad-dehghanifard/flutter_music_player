@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_music_player/controllers/navigation_controller.dart';
-import 'package:flutter_music_player/controllers/play_list_controller.dart';
 import 'package:flutter_music_player/views/home_view.dart';
 import 'package:flutter_music_player/views/play_list_view.dart';
 import 'package:flutter_music_player/widgets/add_play_list_dialog.dart';

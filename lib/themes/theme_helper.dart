@@ -12,6 +12,7 @@ class ThemeHelper {
     // text field style
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(6),
+      hintStyle: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w400,color : Colors.black54),
       filled: true,
       fillColor: const Color(0xFFB9C7FF),
       focusedBorder: OutlineInputBorder(
@@ -36,14 +37,28 @@ class ThemeHelper {
     iconTheme: const IconThemeData(
       color: Color(0xFF0B40FF),
     ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color(0xFFF8F8F8),
       ),
+    // elevated button style
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: const MaterialStatePropertyAll(Color(0xFF466FFF)),
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          )
+        ),
+        elevation: const MaterialStatePropertyAll(0),
+        minimumSize: const MaterialStatePropertyAll(Size(double.infinity,48))
+      )
+    ),
     textTheme: TextTheme(
       titleSmall: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w700,color : const Color(0xFF030E35)),
       labelSmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w400,color : Colors.grey),
       labelLarge: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w700),
       bodySmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w500),
+      bodyMedium: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w500,color : const Color(0xFFF8F8F8)),
     ),
     useMaterial3: true,
   );
@@ -58,7 +73,8 @@ class ThemeHelper {
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(6),
       filled: true,
-      fillColor: const Color(0xFF466FFF),
+      hintStyle: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w400,color : Colors.white),
+      fillColor:  const Color(0x80B2C5FF),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide.none,
         borderRadius: BorderRadius.circular(12),
@@ -71,6 +87,19 @@ class ThemeHelper {
         borderSide: BorderSide.none,
         borderRadius: BorderRadius.circular(12),
       ),
+    ),
+    // elevated button style
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+            backgroundColor: const MaterialStatePropertyAll(Color(0xFF466FFF)),
+            shape: MaterialStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                )
+            ),
+            elevation: const MaterialStatePropertyAll(0),
+            minimumSize: const MaterialStatePropertyAll(Size(double.infinity,48))
+        )
     ),
     scaffoldBackgroundColor: const Color(0xFF030E35),
     colorScheme: const ColorScheme.dark(
@@ -89,6 +118,8 @@ class ThemeHelper {
     textTheme: TextTheme(
         titleSmall: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w700,color :  Colors.white),
         labelSmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w400,color : Colors.grey),
+      labelLarge: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w700),
+      bodyMedium: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w500,color : const Color(0xFFF8F8F8)),
       bodySmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w500),
     ),
   );
