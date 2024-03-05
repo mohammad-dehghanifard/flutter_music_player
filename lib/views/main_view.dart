@@ -38,12 +38,14 @@ class MainView extends StatelessWidget {
             },
             child: const Icon(Icons.add,color: Colors.white,) ,
           ) : null,
-          body:  IndexedStack(
-            index: controller.selectedIndex,
-            children: const [
-              HomeView(),
-              PlayListView(),
-            ],
+          body:  SafeArea(
+            child: IndexedStack(
+              index: controller.selectedIndex,
+              children: const [
+                HomeView(),
+                PlayListView(),
+              ],
+            ),
           ),
         );
       }
