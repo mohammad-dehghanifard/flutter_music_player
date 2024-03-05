@@ -16,10 +16,10 @@ class PlayListController extends GetxController {
       await _audioQuery.createPlaylist(playListName.text);
       Get.back();
       playLists?.clear();
-      _fetchAllPlayList();
+      fetchAllPlayList();
     }
   }
-  Future<void> _fetchAllPlayList() async {
+  Future<void> fetchAllPlayList() async {
     final result = await _audioQuery.queryPlaylists();
     playLists = result;
     update();
@@ -29,7 +29,6 @@ class PlayListController extends GetxController {
      playLists?.removeWhere((it) => it.id == id);
      update();
   }
-
   String? validatePlayListName(String? value) {
     if(value!.isEmpty) {
       return "لطفا یک نام برای لیست پخش خود وارد کنید";
@@ -39,7 +38,7 @@ class PlayListController extends GetxController {
 //============================= Life Cycles ====================================
   @override
   void onInit() {
-    _fetchAllPlayList();
+    fetchAllPlayList();
     super.onInit();
   }
 }

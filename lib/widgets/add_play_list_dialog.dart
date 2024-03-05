@@ -35,7 +35,7 @@ class AddPlayListDialog extends StatelessWidget {
                     SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
                     ElevatedButton(
                         onPressed: () => controller.createPlayList(),
-                        child:  Text("ایجاد لیست پخش",style: context.textTheme.bodyMedium,)
+                        child:  Text("ایجاد لیست پخش",style: context.textTheme.bodyMedium!.apply(color: Colors.white),)
                     )
                   ],
                 ),

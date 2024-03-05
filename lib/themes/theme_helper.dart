@@ -5,6 +5,11 @@ class ThemeHelper {
   static ThemeData light = ThemeData(
     scaffoldBackgroundColor: const Color(0xFFFFFFFF),
     brightness: Brightness.light,
+    // pop menu style
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Colors.white,
+      surfaceTintColor: Colors.transparent
+    ),
     dialogTheme: const DialogTheme(
       backgroundColor: Color(0xFFFFFFFF),
       surfaceTintColor: Colors.transparent
@@ -58,7 +63,7 @@ class ThemeHelper {
       labelSmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w400,color : Colors.grey),
       labelLarge: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w700),
       bodySmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w500),
-      bodyMedium: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w500,color : const Color(0xFFF8F8F8)),
+      bodyMedium: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w500),
     ),
     useMaterial3: true,
   );
@@ -100,6 +105,11 @@ class ThemeHelper {
             elevation: const MaterialStatePropertyAll(0),
             minimumSize: const MaterialStatePropertyAll(Size(double.infinity,48))
         )
+    ),
+    // pop menu style
+    popupMenuTheme: const PopupMenuThemeData(
+        color: Color(0xFF21263A),
+        surfaceTintColor: Colors.transparent
     ),
     scaffoldBackgroundColor: const Color(0xFF030E35),
     colorScheme: const ColorScheme.dark(

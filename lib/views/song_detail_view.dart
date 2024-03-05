@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music_player/controllers/detail_controller.dart';
+import 'package:flutter_music_player/controllers/play_list_controller.dart';
 import 'package:flutter_music_player/widgets/detail_page_app_bar_widget.dart';
+import 'package:flutter_music_player/widgets/select_play_list_bottom_sheet.dart';
 import 'package:get/get.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
@@ -21,7 +23,18 @@ class SongDetailView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     //app bar
-                    const DetailViewAppBar(),
+                    DetailViewAppBar(
+                      onAddToPlayList: () {
+                        final playList =  Get.find<PlayListController>().playLists;
+                        if(playList != null && playList.isNotEmpty){
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) =>
+                               SelectPlayListBottomSheet());
+                        }
+
+                      },
+                    ),
                     SizedBox(height: size.height * 0.08),
                     // image
                     QueryArtworkWidget(

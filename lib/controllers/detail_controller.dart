@@ -1,11 +1,15 @@
+import 'package:flutter_music_player/controllers/play_list_controller.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:on_audio_query/on_audio_query.dart';
 
 class AudioDetailController extends GetxController {
   final Uri uri;
   AudioDetailController(this.uri);
 //============================= Variables ======================================
   final AudioPlayer audioPlayer = AudioPlayer();
+  final OnAudioQuery _audioQuery = OnAudioQuery();
+  PlaylistModel? selectedPlayList;
   Duration currentDuration = const Duration();
   Duration? duration = const Duration();
 
@@ -63,6 +67,21 @@ class AudioDetailController extends GetxController {
      newPosition = currentPosition - const Duration(seconds: 10);
    }
    audioPlayer.seek(newPosition);
+  }
+
+  Future<void> addAudioToPlayList(int audioId) async {
+    if(selectedPlayList != null) {
+      final result = await _audioQuery.addToPlaylist(selectedPlayList!.id, audioId);
+      if(result) {
+        Get.back();
+        if(Get.isRegistered<PlayListController>()) {
+          Get.find<PlayListController>().playLists?.clear();
+          Get.find<PlayListController>().fetchAllPlayList();
+        }
+      } else {
+
+      }
+    }
   }
 
 

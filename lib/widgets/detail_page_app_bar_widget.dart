@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 class DetailViewAppBar extends StatelessWidget {
   const DetailViewAppBar({
-    super.key,
+    super.key, required this.onAddToPlayList,
   });
-
+  final VoidCallback onAddToPlayList;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,9 +13,16 @@ class DetailViewAppBar extends StatelessWidget {
       children: [
         const BackButton(),
         Text("playing",style: context.textTheme.labelSmall),
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu))
+        PopupMenuButton(
+          icon:const Icon(Icons.menu) ,
+          position: PopupMenuPosition.under,
+          itemBuilder: (context) {
+          return [
+             PopupMenuItem(
+                onTap: onAddToPlayList,
+                child: const Center(child: Text("افزودن به لیست پخش")))
+          ];
+        },)
       ],
     );
   }
