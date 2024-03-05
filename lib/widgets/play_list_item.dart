@@ -8,16 +8,18 @@ class PlayListItem extends StatelessWidget {
   const PlayListItem({
     super.key,
     required this.playlist,
+    this.verticalPadding = 12
   });
 
   final PlaylistModel playlist;
+  final double verticalPadding;
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
+        padding:  EdgeInsets.symmetric(vertical: verticalPadding),
         child: Row(
           children: [
             Container(

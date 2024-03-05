@@ -6,8 +6,9 @@ import 'package:get/get.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 class SelectPlayListBottomSheet extends StatelessWidget {
-   SelectPlayListBottomSheet({super.key});
-  final AudioDetailController controller = Get.find<AudioDetailController>();
+  const SelectPlayListBottomSheet({super.key, required this.audioId});
+  final int audioId;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,15 +21,38 @@ class SelectPlayListBottomSheet extends StatelessWidget {
             const Text("یک لیست پخش انتخاب کنید"),
             Expanded(
                 child: ListView.builder(
-                  itemCount: Get.find<PlayListController>().playLists?.length,
-                  itemBuilder: (context, index) {
-                  final PlaylistModel playList = Get.find<PlayListController>().playLists![index];
-                  return PlayListItem(playlist: playList);
-            },)),
+              itemCount: Get.find<PlayListController>().playLists?.length,
+              itemBuilder: (context, index) {
+                final PlaylistModel playList =
+                    Get.find<PlayListController>().playLists![index];
+                return GetBuilder<AudioDetailController>(
+                  builder: (controller) {
+                    return GestureDetector(
+                      onTap: () => controller.changeSelectedPlayList(playList),
+                      child: AnimatedContainer(
+                          margin: const EdgeInsets.symmetric(vertical: 12),
+                          padding: const EdgeInsets.all(8),
+                          duration: const Duration(milliseconds: 200),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              border: controller.selectedPlayList?.id == playList.id
+                                  ? Border.all(
+                                      color: context.theme.colorScheme.primary,
+                                      width: 1)
+                                  : null),
+                          child: PlayListItem(playlist: playList, verticalPadding: 0)),
+                    );
+                  }
+                );
+              },
+            )),
             ElevatedButton(
-                onPressed: () {},
-                child:  Text("افزودن به لیست پخش",style: context.textTheme.bodyMedium!.apply(color: Colors.white),)
-            )
+                onPressed: () => Get.find<AudioDetailController>().addAudioToPlayList(audioId),
+                child: Text(
+                  "افزودن به لیست پخش",
+                  style:
+                      context.textTheme.bodyMedium!.apply(color: Colors.white),
+                ))
           ],
         ),
       ),

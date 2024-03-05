@@ -84,6 +84,11 @@ class AudioDetailController extends GetxController {
     }
   }
 
+  void changeSelectedPlayList(PlaylistModel newValue) {
+    selectedPlayList = newValue;
+    update();
+  }
+
 
 //============================= Life Cycles ====================================
   @override

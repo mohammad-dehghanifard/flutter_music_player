@@ -30,7 +30,7 @@ class SongDetailView extends StatelessWidget {
                           showModalBottomSheet(
                               context: context,
                               builder: (context) =>
-                               SelectPlayListBottomSheet());
+                                SelectPlayListBottomSheet(audioId: song.id));
                         }
 
                       },
