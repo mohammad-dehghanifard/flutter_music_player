@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:on_audio_query/on_audio_query.dart';
@@ -23,6 +24,12 @@ class PlayListController extends GetxController {
     playLists = result;
     update();
   }
+  Future<void> removePlayList(int id) async {
+     await _audioQuery.removePlaylist(id);
+     playLists?.removeWhere((it) => it.id == id);
+     update();
+  }
+
   String? validatePlayListName(String? value) {
     if(value!.isEmpty) {
       return "لطفا یک نام برای لیست پخش خود وارد کنید";

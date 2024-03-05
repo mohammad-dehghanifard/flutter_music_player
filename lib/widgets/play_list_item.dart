@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_music_player/controllers/play_list_controller.dart';
 import 'package:get/get.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
@@ -33,11 +34,15 @@ class PlayListItem extends StatelessWidget {
               children: [
                 Text(playlist.playlist,style: context.textTheme.bodySmall!.copyWith(fontSize: 16)),
                 const SizedBox(height: 2),
-                Text("${playlist.numOfSongs} عدد موزیک",style: context.textTheme.labelSmall)
+                Text("${playlist.numOfSongs} عدد موزیک",style: context.textTheme.labelSmall),
 
 
               ],
-            )
+            ),
+            const Spacer(),
+            IconButton(
+                onPressed: () => Get.find<PlayListController>().removePlayList(playlist.id),
+                icon: const Icon(CupertinoIcons.delete))
           ],
         ),
       ),
