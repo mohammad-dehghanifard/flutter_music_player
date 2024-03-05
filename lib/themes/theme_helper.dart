@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class ThemeHelper {
   static ThemeData light = ThemeData(
     scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+    brightness: Brightness.light,
+
     colorScheme: const ColorScheme.light(
       primary: Color(0xFF0B40FF),
       primaryContainer: Color(0xFF466FFF),
@@ -22,6 +24,7 @@ class ThemeHelper {
   );
 
   static ThemeData dark = ThemeData(
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: const Color(0xFF030E35),
     colorScheme: const ColorScheme.dark(
       primary: Color(0xFF466FFF),

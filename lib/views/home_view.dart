@@ -12,16 +12,14 @@ class HomeView extends StatelessWidget {
     return GetBuilder<HomeController>(
         init: HomeController(),
         builder: (controller) {
-          return Scaffold(
-            body: controller.audioList == null
-                ? const Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                    itemCount: controller.audioList!.length,
-                    itemBuilder: (context, index) {
-                      final SongModel song = controller.audioList![index];
-                      return HomeSongItemWidget(song: song);
-                    },
-                  ),
+          return controller.audioList == null
+              ? const Center(child: CircularProgressIndicator())
+              : ListView.builder(
+            itemCount: controller.audioList!.length,
+            itemBuilder: (context, index) {
+              final SongModel song = controller.audioList![index];
+              return HomeSongItemWidget(song: song);
+            },
           );
         }
     );
