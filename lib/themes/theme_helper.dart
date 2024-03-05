@@ -15,9 +15,13 @@ class ThemeHelper {
     iconTheme: const IconThemeData(
       color: Color(0xFF0B40FF),
     ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Color(0xFFF8F8F8),
+      ),
     textTheme: TextTheme(
       titleSmall: GoogleFonts.vazirmatn(fontSize : 16,fontWeight : FontWeight.w700,color : const Color(0xFF030E35)),
       labelSmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w400,color : Colors.grey),
+      labelLarge: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w700),
       bodySmall: GoogleFonts.vazirmatn(fontSize : 12,fontWeight : FontWeight.w500),
     ),
     useMaterial3: true,
@@ -34,6 +38,9 @@ class ThemeHelper {
     ),
     iconTheme: const IconThemeData(
       color: Color(0xFF466FFF),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Color(0xFF03134F),
     ),
     useMaterial3: true,
     textTheme: TextTheme(

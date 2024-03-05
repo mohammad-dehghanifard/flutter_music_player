@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music_player/themes/theme_helper.dart';
-import 'package:flutter_music_player/views/home_view.dart';
 import 'package:flutter_music_player/views/main_view.dart';
 import 'package:get/get.dart';
 
