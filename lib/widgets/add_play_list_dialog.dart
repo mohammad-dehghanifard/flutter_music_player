@@ -13,7 +13,7 @@ class AddPlayListDialog extends StatelessWidget {
       ),
       child: SizedBox(
         width: double.infinity,
-        height:  MediaQuery.sizeOf(context).height * 0.20,
+        height:  MediaQuery.sizeOf(context).height * 0.22,
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: GetBuilder<PlayListController>(
@@ -22,11 +22,15 @@ class AddPlayListDialog extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 child: Column(
                   children: [
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        hintText:  "نام لیست پخش جدید",
+                    Form(
+                      key: controller.formKey,
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          hintText:  "نام لیست پخش جدید را وارد کنید",
+                        ),
+                        controller: controller.playListName,
+                        validator: controller.validatePlayListName,
                       ),
-                      controller: controller.playListName,
                     ),
                     SizedBox(height: MediaQuery.sizeOf(context).height * 0.04),
                     ElevatedButton(
