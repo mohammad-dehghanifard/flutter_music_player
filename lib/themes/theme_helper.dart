@@ -5,7 +5,28 @@ class ThemeHelper {
   static ThemeData light = ThemeData(
     scaffoldBackgroundColor: const Color(0xFFFFFFFF),
     brightness: Brightness.light,
-
+    dialogTheme: const DialogTheme(
+      backgroundColor: Color(0xFFFFFFFF),
+      surfaceTintColor: Colors.transparent
+    ),
+    // text field style
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: const EdgeInsets.all(6),
+      filled: true,
+      fillColor: const Color(0xFFB9C7FF),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
     colorScheme: const ColorScheme.light(
       primary: Color(0xFF0B40FF),
       primaryContainer: Color(0xFF466FFF),
@@ -29,6 +50,28 @@ class ThemeHelper {
 
   static ThemeData dark = ThemeData(
     brightness: Brightness.dark,
+    dialogTheme: const DialogTheme(
+        backgroundColor: Color(0xFF030E35),
+        surfaceTintColor: Colors.transparent
+    ),
+    // text field style
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: const EdgeInsets.all(6),
+      filled: true,
+      fillColor: const Color(0xFF466FFF),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
     scaffoldBackgroundColor: const Color(0xFF030E35),
     colorScheme: const ColorScheme.dark(
       primary: Color(0xFF466FFF),

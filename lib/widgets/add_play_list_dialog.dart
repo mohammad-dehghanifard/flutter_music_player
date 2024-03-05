@@ -11,7 +11,17 @@ class AddPlayListDialog extends StatelessWidget {
       ),
       child: SizedBox(
         width: double.infinity,
-        height: 60,
+        height: 200,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            children: [
+              TextFormField(
+
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
