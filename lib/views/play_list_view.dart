@@ -9,7 +9,7 @@ class PlayListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
+    return GetBuilder<PlayListController>(
         init: PlayListController(),
         builder: (controller) {
           return controller.playLists == null
@@ -19,6 +19,7 @@ class PlayListView extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   itemBuilder: (context, index) {
                     final PlaylistModel playlist = controller.playLists![index];
+
                     return PlayListItem(playlist: playlist);
                   },
                 );
